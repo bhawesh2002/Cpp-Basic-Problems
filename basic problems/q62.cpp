@@ -14,13 +14,17 @@ int main()
     cout << "Enter a number: ";
     bool isPrime = false;
     cin >> num;
-    for (int i = 0; i < num; i++)
+    for (int i = 2; i < num; i++)
     {
-        if ((num % i) != 0)
+        if (num % i == 0)
         {
-            isPrime == true;
+            break;
+        }
+        else
+        {
+            isPrime = true;
         }
     }
-    cout << isPrime << endl;
+    cout << "isPrime: " << isPrime << endl;
     return 0;
 }

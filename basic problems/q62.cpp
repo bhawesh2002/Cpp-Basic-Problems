@@ -7,7 +7,7 @@ In other words, a twin prime is a prime that has a prime gap of two".*/
 
 using namespace std;
 
-bool primeCheck(int num)
+int primeCheck(int num)
 {
     int check = true;
     for (int i = 2; i < num; i++)

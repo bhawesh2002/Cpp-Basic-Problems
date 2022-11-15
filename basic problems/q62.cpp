@@ -8,30 +8,53 @@ In other words, a twin prime is a prime that has a prime gap of two".*/
 
 using namespace std;
 
-int main()
+bool primeCheck(int num)
 {
-    int num{};
-    cout << "Enter a number: ";
-    bool isPrime = false;
-    cin >> num;
+    bool check = false;
     for (int i = 2; i < num; i++)
     {
         if (num % i == 0)
         {
+            cout << num << " % " << i << "=" << num % i << endl;
             break;
         }
         else
         {
-            isPrime = true;
+            check = true;
         }
     }
-    if (isPrime == true)
+    if (check == true)
     {
-        cout << "num entered is prime" << endl;
+        return 1;
     }
     else
     {
-        cout << "number entered is not prime" << endl;
+        return 0;
+    }
+}
+
+int main()
+{
+    int num{};
+    cout << "Enter a number: ";
+    cin >> num;
+    int isPrime = primeCheck(num);
+    if (isPrime == 1)
+    {
+        int next = num + 2;
+        int isTwinPrime = primeCheck(num);
+        if (isPrime == isTwinPrime)
+        {
+            cout << "Twin prime of " << num << " is " << next << endl;
+        }
+        else
+        {
+            cout << num << " does not have a twin prime." << endl;
+        }
+    }
+    else
+    {
+        cout << num << " is not a prime number." << endl;
         exit(0);
     }
     return 0;

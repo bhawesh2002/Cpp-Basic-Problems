@@ -4,7 +4,6 @@ either 2 less or 2 more than another prime number" for example, either member of
 In other words, a twin prime is a prime that has a prime gap of two".*/
 
 #include <iostream>
-#include <climits>
 
 using namespace std;
 

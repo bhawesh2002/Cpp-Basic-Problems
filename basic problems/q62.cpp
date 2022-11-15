@@ -9,27 +9,20 @@ using namespace std;
 
 bool primeCheck(int num)
 {
-    bool check = false;
+    int check = true;
     for (int i = 2; i < num; i++)
     {
         if (num % i == 0)
         {
-            cout << num << " % " << i << "=" << num % i << endl;
+            check = false;
             break;
-        }
-        else
-        {
-            check = true;
         }
     }
     if (check == true)
     {
         return 1;
     }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }
 
 int main()
@@ -41,7 +34,7 @@ int main()
     if (isPrime == 1)
     {
         int next = num + 2;
-        int isTwinPrime = primeCheck(num);
+        int isTwinPrime = primeCheck(next);
         if (isPrime == isTwinPrime)
         {
             cout << "Twin prime of " << num << " is " << next << endl;
@@ -54,7 +47,6 @@ int main()
     else
     {
         cout << num << " is not a prime number." << endl;
-        exit(0);
     }
     return 0;
 }

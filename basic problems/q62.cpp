@@ -25,6 +25,14 @@ int main()
             isPrime = true;
         }
     }
-    cout << "isPrime: " << isPrime << endl;
+    if (isPrime == true)
+    {
+        cout << "num entered is prime" << endl;
+    }
+    else
+    {
+        cout << "number entered is not prime" << endl;
+        exit(0);
+    }
     return 0;
 }
